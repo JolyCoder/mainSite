@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Item, Modal, Header, Label, Popup, Grid, Divider } from 'semantic-ui-react'
+import { Button, Item, Modal, Header, Label, Popup, Grid } from 'semantic-ui-react'
 import { connect } from 'react-redux'
 import { css } from 'aphrodite'
 import styles from '../styles/styles'
