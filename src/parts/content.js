@@ -19,64 +19,64 @@ class Content extends Component {
     return (
       <div>
         <HeaderM />
-        <div className={css(styles.itemDiv)}>
-          <Item.Group>
-            <Grid columns={2} centered divided>
-              {this.props.news.map((item, index) => (
-                <Grid.Column>
-                  <Item className={css(styles.item)}>
-                    <Item.Image
-                      size="tiny"
-                      src={item.logo}
-                      className={css(styles.log)}
-                    />
-                    <Item.Content>
-                      <Item.Header as="h2" className={css(styles.mrg)}>
-                        {item.title}
-                      </Item.Header>
-                      <Item.Meta className={css(styles.mrg)}>
-                        <div>
-                          <Popup
-                            position="right center"
+        <Item.Group>
+            <div className={css(styles.itemDiv)}>
+                <Grid columns={2} centered divided>
+                {this.props.news.map((item, index) => (
+                    <Grid.Column>
+                    <Item className={css(styles.item)}>
+                        <Item.Image
+                        size="tiny"
+                        src={item.logo}
+                        className={css(styles.log)}
+                        />
+                        <Item.Content>
+                        <Item.Header as="h2" className={css(styles.mrg)}>
+                            {item.title}
+                        </Item.Header>
+                        <Item.Meta className={css(styles.mrg)}>
+                            <div>
+                            <Popup
+                                position="right center"
+                                trigger={
+                                <Label as="a" color="blue">
+                                    {item.author}
+                                </Label>
+                                }>
+                                <Usercard author={item.author} />
+                            </Popup>
+                            </div>
+                        </Item.Meta>
+                        <Item.Description className={css(styles.mrg)}>
+                            {item.descrip}
+                        </Item.Description>
+                        <Item.Extra className={css(styles.mrg)}>
+                            <Modal
+                            dimmer="blurring"
                             trigger={
-                              <Label as="a" color="blue">
-                                {item.author}
-                              </Label>
+                                <Button>Показать больше</Button>
                             }>
-                            <Usercard author={item.author} />
-                          </Popup>
-                        </div>
-                      </Item.Meta>
-                      <Item.Description className={css(styles.mrg)}>
-                        {item.descrip}
-                      </Item.Description>
-                      <Item.Extra className={css(styles.mrg)}>
-                        <Modal
-                          dimmer="blurring"
-                          trigger={
-                            <Button>Показать больше</Button>
-                          }>
-                          <Modal.Header>Запись</Modal.Header>
-                          <div className={css(styles.card)}>
-                            <Usercard author={item.author} />
-                          </div>
-                          <Modal.Content text>
-                            <Header>
-                              <h2>{item.title}</h2>
-                            </Header>
-                            <Modal.Description>
-                              <p>{item.text}</p>
-                            </Modal.Description>
-                          </Modal.Content>
-                        </Modal>
-                      </Item.Extra>
-                    </Item.Content>
-                  </Item>
-                </Grid.Column>
-              ))}
-            </Grid>
-          </Item.Group>
-        </div>
+                            <Modal.Header>Запись</Modal.Header>
+                            <div className={css(styles.card)}>
+                                <Usercard author={item.author} />
+                            </div>
+                            <Modal.Content text>
+                                <Header>
+                                <h2>{item.title}</h2>
+                                </Header>
+                                <Modal.Description>
+                                <p>{item.text}</p>
+                                </Modal.Description>
+                            </Modal.Content>
+                            </Modal>
+                        </Item.Extra>
+                        </Item.Content>
+                    </Item>
+                    </Grid.Column>
+                ))}
+                </Grid>
+            </div>
+        </Item.Group>
       </div>
     );
   }
