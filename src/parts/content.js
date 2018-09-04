@@ -86,4 +86,3 @@ export default connect(state => ({
   news: state.news,
   users: state.users
 }))(Content);
-
