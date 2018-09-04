@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import HeaderM from './parts/head';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import HeaderM from "./parts/head";
 
 class App extends Component {
   render() {
@@ -12,9 +12,8 @@ class App extends Component {
   }
 }
 
-export default connect(
-  state => ({
-    news: state.news,
-    users: state.users
-  })
-)(App);
+export default connect(state => ({
+  news: state.news,
+  users: state.users
+}))(App);
+
